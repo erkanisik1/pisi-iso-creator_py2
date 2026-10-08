@@ -1,0 +1,58 @@
+#!/bin/sh
+#
+# Shutdown script for initramfs
+#
+
+PATH=/usr/sbin:/usr/bin:/sbin:/bin
+
+info() {
+    echo "<6>initramfs-shutdown: $1" > /dev/kmsg
+}
+
+info "Starting shutdown sequence"
+
+# Kill all processes except ourselves
+killall5 -9 2>/dev/null
+
+# Sync filesystems
+sync
+
+# Unmount everything
+umount -a -r 2>/dev/null
+
+# Deactivate LVM if active
+if [ -x /sbin/lvm ]; then
+    info "Deactivating LVM volumes"
+    /sbin/lvm vgchange -an --ignorelockingfailure 2>/dev/null
+fi
+
+# Stop RAID arrays
+if [ -x /sbin/mdadm ]; then
+    info "Stopping RAID arrays"
+    /sbin/mdadm --stop --scan 2>/dev/null
+fi
+
+# Remove loop devices
+for loop in /dev/loop*; do
+    [ -b "$loop" ] && losetup -d "$loop" 2>/dev/null
+done
+
+# Final sync
+sync
+sleep 1
+
+# Poweroff or reboot
+case "$1" in
+    reboot)
+        info "Rebooting system"
+        exec /bin/busybox reboot -f
+        ;;
+    halt)
+        info "Halting system"
+        exec /bin/busybox halt -f
+        ;;
+    *)
+        info "Powering off system"
+        exec /bin/busybox poweroff -f
+        ;;
+esac

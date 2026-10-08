@@ -1,0 +1,79 @@
+mus1@pisilinux2: iso $ li -l
+bash: li: komut bulunamadı...
+Dosya aranamadı: The backend exited unexpectedly. This is a serious error as the spawned backend did not complete the pending transaction.
+mus1@pisilinux2: iso $ ls -l
+toplam 20532
+-rwxr-xr-x 1 root root       68 Oca  2  2022 autorun.inf
+-rwxr-xr-x 1 root root    16958 Oca  2  2022 cdrom.ico
+drwxr-xr-x 3 root root     4096 Ara 11 12:38 EFI
+-rw-r--r-- 1 root root 20971520 Ara 11 12:38 efi.img
+-rwxr-xr-x 1 root root     3164 Ara 11 12:38 index.html
+drwxr-xr-x 2 root root     4096 Ara 11 12:38 isolinux
+drwxr-xr-x 2 root root     4096 Ağu 24  2023 license
+-rwxr-xr-x 1 root root     2183 Oca  2  2022 logo.png
+drwxr-xr-x 3 root root     4096 Ara 11 12:38 pisi
+drwxr-xr-x 2 root root     4096 Ağu 24  2023 release-notes
+mus1@pisilinux2: iso $ lr
+bash: lr: komut bulunamadı...
+Dosya aranamadı: The backend exited unexpectedly. This is a serious error as the spawned backend did not complete the pending transaction.
+mus1@pisilinux2: iso $ ls -R
+.:
+autorun.inf  cdrom.ico  EFI  efi.img  index.html  isolinux  license  logo.png  pisi  release-notes
+
+./EFI:
+boot
+
+./EFI/boot:
+bootx64.efi  grub2  tr.gkb  us.gkb
+
+./EFI/boot/grub2:
+themes
+
+./EFI/boot/grub2/themes:
+pisilinux
+
+./EFI/boot/grub2/themes/pisilinux:
+ascii.pf2          DejaVuSans-16.pf2       LICENSE              terminal_box_c.png   terminal_box_se.png  theme.txt
+background.jpg     DejaVuSans-Bold-14.pf2  preview.jpg          terminal_box_e.png   terminal_box_s.png
+DejaVuSans-10.pf2  DejaVuSans-Mono-14.pf2  README.md            terminal_box_ne.png  terminal_box_sw.png
+DejaVuSans-12.pf2  icons                   select_c.png         terminal_box_n.png   terminal_box_w.png
+DejaVuSans-14.pf2  item_c.png              selected_item_c.png  terminal_box_nw.png  terminus-14.pf2
+
+./EFI/boot/grub2/themes/pisilinux/icons:
+4MLinux.png      deepin.png       gnu-linux.png  linuxmint.png       nixos.png      steamos.png
+AlpineLinux.png  devuan.png       gpart.png      linux.png           opensuse.png   submenu.png
+android.png      driver.png       haiku.png      lubuntu.png         parrot.png     SystemRescueCD.png
+anonymous.png    edit.png         help.png       macosx.png          pisilinux.png  type.png
+antergos.png     efi.png          kali.png       mageia.png          pop-os.png     tz.png
+archlinux.png    elementary.png   kaos.png       Manjaro.i686.png    pop.png        ubuntu.png
+arch.png         endeavouros.png  kbd.png        manjarolinux.png    recovery.png   unknown.png
+arcolinux.png    fedora.png       kernel.png     manjaro.png         regolith.png   unset.png
+artix.png        find.efi.png     korora.png     Manjaro.x86_64.png  restart.png    void.png
+cancel.png       find.none.png    kubuntu.png    memtest.png         shutdown.png   windows.png
+chakra.png       freebsd.png      lang.png       mx-linux.png        siduction.png  xubuntu.png
+debian.png       gentoo.png       lfs.png        neon.png            solus.png      zorin.png
+
+./isolinux:
+16x16.fnt  de.hlp  fr.hlp        hdt.c32       isolinux.bin  libcom32.c32  panim_a.jpg  pt_BR.hlp  timer_a.jpg
+back.jpg   de.tr   fr.tr         hr.hlp        isolinux.cfg  libgpl.c32    panim.jpg    pt_BR.tr   tr.hlp
+bootlogo   en.hlp  gfxboot.c32   hr.tr         it.hlp        libmenu.c32   pback.jpg    ru.hlp     tr.tr
+ca.hlp     en.tlk  gfxboot.cfg   hu.hlp        it.tr         libutil.c32   pci.ids      ru.tr      vesamenu.c32
+ca.tr      en.tr   grad1.jpg     hu.tr         kroete.dat    nl.hlp        phead.jpg    sv.hlp     welcome.jpg
+cd_a.jpg   es.hlp  grad2.jpg     init          languages     nl.tr         pl.hlp       sv.tr
+cd.jpg     es.tr   hapysuse.mod  isohdpfx.bin  ldlinux.c32   pabout.txt    pl.tr        text.jpg
+
+./license:
+license-de.txt  license-es.txt  license-it.txt  license-pl.txt  license-sv.txt
+license-en.txt  license-fr.txt  license-nl.txt  license-pt.txt  license-tr.txt
+
+./pisi:
+boot  isomounts  pisi.sqfs
+
+./pisi/boot:
+initrd  kernel  memtest
+
+./release-notes:
+releasenotes-de.html  releasenotes-fr.html  releasenotes-it.html  releasenotes-sv.html
+releasenotes-en.html  releasenotes-hr.html  releasenotes-nl.html  releasenotes-tr.html
+releasenotes-es.html  releasenotes-hu.html  releasenotes-ru.html  releasenotes-ua.html
+mus1@pisilinux2: iso $ 
