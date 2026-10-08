@@ -1,0 +1,40 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+
+# Environment
+.env
+.venv
+env/
+venv/
+
+# ISO/Build artifacts
+*.iso
+*.img
+*.tar.xz
+*.tar.gz
+
+# OS specific
+Thumbs.db
