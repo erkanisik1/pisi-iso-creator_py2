@@ -14,7 +14,7 @@
 # System
 import sys
 import time
-from pisiman.repotools import packages
+from repotools import packages
 
 
 def maker(op, project_file):

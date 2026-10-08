@@ -197,7 +197,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         if not filename:
             filename = QFileDialog.getOpenFileName(
-                self, _("Select project file"), "../project-files",
+                self, _("Select project file"), "project-files",
                 "Xml Files (*.xml)")
             filename = filename[0]
         if filename:
