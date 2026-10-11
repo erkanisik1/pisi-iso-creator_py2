@@ -6,7 +6,7 @@
     <IsoOutputDir use-project-dir="True"></IsoOutputDir>
     <PackageCollections>
         <PackageCollection default="True">
-            <Id>7AlIy8RA</Id>
+            <Id>DXMj6DVDO0PE</Id>
             <Icon>kde-desktop-collection-icon.png</Icon>
             <Translations>
                 <Translation language="ru_RU">
@@ -70,7 +70,6 @@
                 <SelectedComponent>desktop.kde.framework</SelectedComponent>
                 <SelectedComponent>system.base</SelectedComponent>
                 <SelectedComponent>x11.server</SelectedComponent>
-                <SelectedComponent>x11.wayland</SelectedComponent>
                 <SelectedPackage>accountsservice</SelectedPackage>
                 <SelectedPackage>acpi</SelectedPackage>
                 <SelectedPackage>acpid</SelectedPackage>
@@ -87,6 +86,7 @@
                 <SelectedPackage>breeze-gtk</SelectedPackage>
                 <SelectedPackage>breeze-plymouth</SelectedPackage>
                 <SelectedPackage>btrfs-progs</SelectedPackage>
+                <SelectedPackage>carlito-fonts</SelectedPackage>
                 <SelectedPackage>cups-filters</SelectedPackage>
                 <SelectedPackage>desktop-file-utils</SelectedPackage>
                 <SelectedPackage>discover-plugin-flatpak</SelectedPackage>
@@ -342,7 +342,6 @@
                 <Package>editorconfig-core-c</Package>
                 <Package>efibootmgr</Package>
                 <Package>efivar</Package>
-                <Package>egl-wayland</Package>
                 <Package>elfutils</Package>
                 <Package>ell</Package>
                 <Package>elogind</Package>
@@ -991,7 +990,6 @@
                 <Package>protobuf</Package>
                 <Package>protobuf-c</Package>
                 <Package>psmisc</Package>
-                <Package>pugixml</Package>
                 <Package>pulseaudio</Package>
                 <Package>pulseaudio-libs</Package>
                 <Package>pulseaudio-qt6</Package>
@@ -1198,7 +1196,6 @@
                 <Package>wayland-protocols</Package>
                 <Package>wayland-server</Package>
                 <Package>wayland-utils</Package>
-                <Package>waylandpp</Package>
                 <Package>webkit2gtk-4.1</Package>
                 <Package>webp</Package>
                 <Package>webrtc-audio-processing-1</Package>
@@ -1248,7 +1245,6 @@
         <SelectedComponent>desktop.kde.framework</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedComponent>x11.server</SelectedComponent>
-        <SelectedComponent>x11.wayland</SelectedComponent>
         <SelectedPackage>accountsservice</SelectedPackage>
         <SelectedPackage>acpi</SelectedPackage>
         <SelectedPackage>acpid</SelectedPackage>
@@ -1265,6 +1261,7 @@
         <SelectedPackage>breeze-gtk</SelectedPackage>
         <SelectedPackage>breeze-plymouth</SelectedPackage>
         <SelectedPackage>btrfs-progs</SelectedPackage>
+        <SelectedPackage>carlito-fonts</SelectedPackage>
         <SelectedPackage>cups-filters</SelectedPackage>
         <SelectedPackage>desktop-file-utils</SelectedPackage>
         <SelectedPackage>discover-plugin-flatpak</SelectedPackage>
@@ -1520,7 +1517,6 @@
         <Package>editorconfig-core-c</Package>
         <Package>efibootmgr</Package>
         <Package>efivar</Package>
-        <Package>egl-wayland</Package>
         <Package>elfutils</Package>
         <Package>ell</Package>
         <Package>elogind</Package>
@@ -2169,7 +2165,6 @@
         <Package>protobuf</Package>
         <Package>protobuf-c</Package>
         <Package>psmisc</Package>
-        <Package>pugixml</Package>
         <Package>pulseaudio</Package>
         <Package>pulseaudio-libs</Package>
         <Package>pulseaudio-qt6</Package>
@@ -2376,7 +2371,6 @@
         <Package>wayland-protocols</Package>
         <Package>wayland-server</Package>
         <Package>wayland-utils</Package>
-        <Package>waylandpp</Package>
         <Package>webkit2gtk-4.1</Package>
         <Package>webp</Package>
         <Package>webrtc-audio-processing-1</Package>
@@ -2424,7 +2418,6 @@
         <SelectedComponent>desktop.kde.framework</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedComponent>x11.server</SelectedComponent>
-        <SelectedComponent>x11.wayland</SelectedComponent>
         <SelectedPackage>accountsservice</SelectedPackage>
         <SelectedPackage>acpi</SelectedPackage>
         <SelectedPackage>acpid</SelectedPackage>
@@ -2585,6 +2578,7 @@
         <SelectedPackage>xorg-video-vesa</SelectedPackage>
         <SelectedPackage>xvba-video</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
+        <SelectedPackage>yali-rs</SelectedPackage>
         <SelectedPackage>zorg</SelectedPackage>
         <Package>DirectFB</Package>
         <Package>DirectX-headers</Package>
@@ -2718,7 +2712,6 @@
         <Package>editorconfig-core-c</Package>
         <Package>efibootmgr</Package>
         <Package>efivar</Package>
-        <Package>egl-wayland</Package>
         <Package>elfutils</Package>
         <Package>ell</Package>
         <Package>elogind</Package>
@@ -2780,8 +2773,20 @@
         <Package>glib-networking</Package>
         <Package>glib2</Package>
         <Package>glibc</Package>
+        <Package>glibc-locales-ca</Package>
+        <Package>glibc-locales-de</Package>
         <Package>glibc-locales-en</Package>
+        <Package>glibc-locales-es</Package>
         <Package>glibc-locales-eu</Package>
+        <Package>glibc-locales-fr</Package>
+        <Package>glibc-locales-hr</Package>
+        <Package>glibc-locales-hu</Package>
+        <Package>glibc-locales-it</Package>
+        <Package>glibc-locales-nl</Package>
+        <Package>glibc-locales-pl</Package>
+        <Package>glibc-locales-pt</Package>
+        <Package>glibc-locales-ru</Package>
+        <Package>glibc-locales-sv</Package>
         <Package>glslang</Package>
         <Package>gmp</Package>
         <Package>gnome-desktop</Package>
@@ -3433,7 +3438,6 @@
         <Package>protobuf</Package>
         <Package>protobuf-c</Package>
         <Package>psmisc</Package>
-        <Package>pugixml</Package>
         <Package>pulseaudio</Package>
         <Package>pulseaudio-libs</Package>
         <Package>pulseaudio-qt6</Package>
@@ -3557,6 +3561,7 @@
         <Package>redland</Package>
         <Package>reiserfsprogs</Package>
         <Package>rrdtool</Package>
+        <Package>rsync</Package>
         <Package>rsyslog</Package>
         <Package>rtl88x2bu</Package>
         <Package>rtmpdump</Package>
@@ -3668,7 +3673,6 @@
         <Package>wayland-protocols</Package>
         <Package>wayland-server</Package>
         <Package>wayland-utils</Package>
-        <Package>waylandpp</Package>
         <Package>webkit2gtk-4.1</Package>
         <Package>webp</Package>
         <Package>webrtc-audio-processing-1</Package>
@@ -3731,6 +3735,7 @@
         <Package>xvid</Package>
         <Package>xz</Package>
         <Package>yakuake</Package>
+        <Package>yali-rs</Package>
         <Package>zeromq</Package>
         <Package>zip</Package>
         <Package>zlib</Package>
