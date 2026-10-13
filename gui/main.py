@@ -126,8 +126,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionUpdateRepo.triggered.connect(self.slotUpdateRepo)
         self.actionLanguages.triggered.connect(self.slotSelectLanguages)
         self.actionPackages.triggered.connect(self.slotSelectPackages)
-        self.actionInstallationImagePackages.triggered.connect(
-            self.slotSelectInstallImagePackages)
+        # NOTE: InstallationImagePackages kaldırıldı, ISO sadece PackageSelection'dan yapılır.
         self.actionMakeImage.triggered.connect(self.slotMakeImage)
 
         self.actionMake_Repo.triggered.connect(self.slotMakeRepo)
@@ -424,22 +423,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def slotSelectInstallImagePackages(self):
         """
-            "Installation Image Packages..." menu item fires this function.
+            Kaldırıldı: ISO sadece PackageSelection içindeki paketlerden yapılır.
         """
-        if not self.repo:
-            if not self.checkProject():
-                return
-            if not self.updateRepo():
-                return
-
-        dialog = PackagesDialog(
-            self, self.repo, self.project.selected_install_image_packages,
-            self.project.selected_install_image_components)
-
-        if dialog.exec_():
-            self.project.selected_install_image_packages = dialog.packages
-            self.project.selected_install_image_components = dialog.components
-            self.project.all_install_image_packages = dialog.all_packages
+        return
 
     def slotUpdateRepo(self):
         """

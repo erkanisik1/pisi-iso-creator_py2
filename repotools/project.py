@@ -272,7 +272,7 @@ class Project:
         # print("iso_output_dir:", self.iso_output_dir)
         if not self.iso_output_dir:
             self.iso_output_dir = ""
-            self.all_install_image_packages = True
+            self.all_install_image_packages = []
         else:
             self.use_project_dir_as_output_dir = bool(doc.getTag("IsoOutputDir").getAttribute("use-project-dir"))
 
@@ -363,20 +363,10 @@ class Project:
         if languageSelectionTag:
             self.default_language, self.selected_languages = __languageSelection(languageSelectionTag)
 
-        installImagePackagesTag = doc.getTag("InstallImagePackages")
-        if installImagePackagesTag:
-            uri, \
-            self.selected_install_image_components, \
-            self.selected_install_image_packages, \
-            self.all_install_image_packages = __packageSelection(installImagePackagesTag)
-
-            self.selected_install_image_components.sort()
-            self.selected_install_image_packages.sort()
-            self.all_install_image_packages.sort()
-            self.selected_components += self.selected_install_image_components
-            self.selected_components.sort()
-            self.selected_packages += self.selected_install_image_packages
-            self.selected_packages.sort()
+        # NOTE: installation kısımları kaldırıldı. ISO sadece
+        # PackageSelection (PackageCollections / PackageSelection)
+        # içindeki paketlerden yapılır. Eski InstallImagePackages
+        # etiketleri bilerek okunmaz.
 
     def save(self, filename=None):
         # Save the data into filename as pardusman project file
@@ -440,14 +430,6 @@ class Project:
                 for item in collection.packages.allPackages:
                     packageSelection.insertTag("Package").insertData(item)
 
-                packageSelection = doc.insertTag("InstallImagePackages")
-                for item in collection.packages.selectedComponents:
-                    packageSelection.insertTag("SelectedComponent").insertData(item)
-                for item in collection.packages.selectedPackages:
-                    packageSelection.insertTag("SelectedPackage").insertData(item)
-                for item in collection.packages.allPackages:
-                    packageSelection.insertTag("Package").insertData(item)
-
         else:
             self.selected_components.sort()
             self.selected_packages.sort()
@@ -466,26 +448,7 @@ class Project:
             for item in self.all_packages:
                 package_selection.insertTag("Package").insertData(item)
 
-
-        if self.all_install_image_packages:
-            self.selected_install_image_components.sort()
-            self.selected_install_image_packages.sort()
-            self.all_install_image_packages.sort()
-
-            package_selection = doc.insertTag("InstallImagePackages")
-
-            # Insert components if any
-            for item in self.selected_install_image_components:
-                package_selection.insertTag("SelectedComponent").insertData(item)
-
-            for item in self.selected_install_image_packages:
-                package_selection.insertTag("SelectedPackage").insertData(item)
-
-            for item in self.all_install_image_packages:
-                package_selection.insertTag("Package").insertData(item)
-
-            inst = doc.insertTag("installationPackages")
-            inst.insertTag("peri").insertData(item)
+        # NOTE: InstallImagePackages / installationPackages yazılmaz.
 
         if self.default_language:
             # Set the default language
@@ -595,23 +558,12 @@ class Project:
 
         self.all_packages.sort()
 
-        # Find all install image packages
-        packages = []
-        self.all_install_image_packages = []
-
-        for component in self.selected_install_image_components:
-            if component not in repo.components:
-                if component not in self.missing_components:
-                    self.missing_components.append(component)
-                return
-            for package in repo.components[component]:
-                collect(package)
-
-        for package in self.selected_install_image_packages:
-            collect(package)
-
-        packages.sort()
-        self.all_install_image_packages = packages
+        # Installation imajı kaldırıldı: ISO içeriği sadece PackageSelection'dan
+        # gelir. Eski maker kodu all_install_image_packages kullandığı için
+        # uyumluluk amacıyla aynı listeyle senkron tutulur.
+        self.selected_install_image_components = list(self.selected_components)
+        self.selected_install_image_packages = list(self.selected_packages)
+        self.all_install_image_packages = list(self.all_packages)
 
     def image_repo_dir(self, clean=False):
         return self._get_dir("image_repo", clean)
